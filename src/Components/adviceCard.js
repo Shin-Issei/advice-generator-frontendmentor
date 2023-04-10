@@ -1,13 +1,12 @@
 /* 
 I. The advice card is for display only. The fetch ought to be done by the app it self at a higher level.
 */
-// import diceIcon from "../Assets/images/icon-dice.svg";
-function AdviceCard(props) {
+
+function AdviceCard({adviceID, adviceText}) {
   return (
-    <div>
-      <p>{props.adviceID}</p>
-      <p>{props.adviceText}</p>
-      {/* <img src={diceIcon} alt="dice icon"></img> */}
+    <div id="advice-card">
+      <p id="advice-num">ADVICE #{adviceID}</p>
+      <p>{adviceText}</p>
     </div>
   );
 }
