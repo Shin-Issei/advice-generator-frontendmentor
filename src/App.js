@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import AdviceCard from "./Components/adviceCard";
-import diceIcon from "../src/Assets/images/icon-dice.svg";
 
 function App() {
   // Fetch is done here because display component is for display only
@@ -10,11 +9,7 @@ function App() {
     getAdvice();
   }, []);
   function getAdvice() {
-    let slip_id = Math.round(Math.random() * 224);
-    if (slip_id === 48) {
-      // Advice #48 is returning an error
-      slip_id += 1;
-    }
+    let slip_id = Math.round(Math.random() * 223);
     fetch(`https://api.adviceslip.com/advice/${slip_id}`)
       .then((res) => {
         return res.json();
@@ -24,14 +19,18 @@ function App() {
       });
   }
 
-  return (
-    <div className="App">
-      <AdviceCard adviceID={adviceData.id} adviceText={adviceData.advice} />
-      <button onClick={getAdvice}>
-        <img src={diceIcon} alt="Dice"></img>
-      </button>
-    </div>
-  );
+  if(adviceData === undefined){
+    getAdvice()
+  }
+  else{
+    return (
+      <div className="App">
+        <AdviceCard adviceID={adviceData.id} adviceText={adviceData.advice} getAdvice={getAdvice} />
+        
+      </div>
+    )
+  }
+;
 }
 
 export default App;

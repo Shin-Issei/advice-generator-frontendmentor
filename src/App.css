@@ -1,21 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
 :root {
-    /* Primary */
+  /* Primary */
   --lightCyan: hsl(193, 38%, 86%);
   --neonGreen: hsl(150, 100%, 66%);
   /* Neutral */
   --grayishBlue: hsl(217, 19%, 38%);
   --darkGrayishBlue: hsl(217, 19%, 24%);
   --darkBlue: hsl(218, 23%, 16%);
-  --quoteFontsize: 28px
+  --quoteFontsize: 28px;
 }
 
-#advice-card{
-    font-family: 'Manrope',sans-serif;
-    font-size: var(--quoteFontsize);
+body {
+  background-color: var(--darkBlue);
 }
 
-#advice-card > #advice-num{
-    letter-spacing: .4ch;
+.App {
+  display: flex;
+  justify-content: center;
 }
 
+#advice-card {
+  margin-top: 25vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Manrope", sans-serif;
+  font-size: var(--quoteFontsize);
+  background-color: var(--darkGrayishBlue);
+  min-width: 375px;
+  max-width: 425px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+#advice-num {
+  font-size: 14px;
+}
+
+#advice-text {
+  color: var(--lightCyan);
+}
+
+#advice-card > #advice-num {
+  letter-spacing: 0.4ch;
+  color: var(--neonGreen);
+}
+
+#advice-card > img {
+  max-width: fit-content;
+}
+
+#button-wrapper > button {
+  bottom: -75%;
+  padding: 1rem;
+  border-radius: 50%;
+  border-style: none;
+  background-color: var(--neonGreen);
+}
+
+#button-wrapper > button:hover {
+  cursor: pointer;
+  filter: drop-shadow(0 0 15px hsl(150, 100%, 66%));
+}
+@media screen and (min-width: 375px) {
+  #advice-card {
+    max-width: 375px;
+    padding: 1rem;
+  }
+  #button-wrapper > button {
+    position: relative;
+    left: auto;
+  }
+}
