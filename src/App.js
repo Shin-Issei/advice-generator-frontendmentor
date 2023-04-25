@@ -19,18 +19,19 @@ function App() {
       });
   }
 
-  if(adviceData === undefined){
-    getAdvice()
-  }
-  else{
+  if (adviceData === undefined) {
+    getAdvice();
+  } else {
     return (
       <div className="App">
-        <AdviceCard adviceID={adviceData.id} adviceText={adviceData.advice} getAdvice={getAdvice} />
-        
+        <AdviceCard
+          adviceID={adviceData.id}
+          adviceText={adviceData.advice}
+          getAdvice={getAdvice}
+        />
       </div>
-    )
+    );
   }
-;
 }
 
 export default App;
