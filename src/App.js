@@ -7,9 +7,9 @@ function App() {
   // Fetch is done here because display component is for display only
   let [adviceData, assignData] = useState([]);
   useEffect(() => {
-    getData();
+    getAdvice();
   }, []);
-  function getData() {
+  function getAdvice() {
     let slip_id = Math.round(Math.random() * 224);
     if (slip_id === 48) {
       // Advice #48 is returning an error
@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <AdviceCard adviceID={adviceData.id} adviceText={adviceData.advice} />
-      <button onClick={getData}>
+      <button onClick={getAdvice}>
         <img src={diceIcon} alt="Dice"></img>
       </button>
     </div>
