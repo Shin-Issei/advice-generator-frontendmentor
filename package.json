@@ -1,6 +1,6 @@
 {
-  "homepage": "https://shin-issei.github.io/advice-generator-frontendmentor/",
   "name": "advice-generator-frontendmentor",
+  "homepage": "https://shin-issei.github.io/advice-generator-frontendmentor/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
